@@ -1,0 +1,50 @@
+# Python virtual environment
+venv/
+env/
+ENV/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Python Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Panda3D specific
+*.bam
