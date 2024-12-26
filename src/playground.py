@@ -12,7 +12,7 @@ loadPrcFileData("", """
 class DroneSimulation(ShowBase):
     def __init__(self):
         ShowBase.__init__(self)
-        self.setup_test_block()
+        self.setup_drones()
         self.taskMgr.add(self.update, "UpdateScene")
 
     def update(self, task):
@@ -21,11 +21,18 @@ class DroneSimulation(ShowBase):
         self.camera.lookAt(0, 0, 0)
         return Task.cont
     
-    def setup_test_block(self):
-        self.test = self.loader.loadModel("box")
-        self.test.setScale(1, 1, 1)
-        self.test.setPos(0, 0, 0)
-        self.test.reparentTo(self.render)
+    def setup_drones(self):
+        # Create 5 drones in a line along the X axis
+        self.drones = []
+        spacing = 3  # Units between each drone
+        
+        for i in range(5):
+            drone = self.loader.loadModel("box")
+            drone.setScale(1, 1, 1)
+            # Position each drone 3 units apart
+            drone.setPos((i - 2) * spacing, 0, 0)  # Centered around 0
+            drone.reparentTo(self.render)
+            self.drones.append(drone)
 
 # Create and run the simulation
 sim = DroneSimulation()
